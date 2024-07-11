@@ -29,4 +29,9 @@ public class PropostaController {
         return new ResponseEntity<>(propostaAprovada, HttpStatus.OK);
     }
 
+    @GetMapping("/buscar/{idProposta}")
+    public ResponseEntity<?> buscarPropostaPorID(@PathVariable Long idProposta) {
+        Proposta proposta = propostaService.buscarPropostaPorID(idProposta);
+        return new ResponseEntity<>(proposta, HttpStatus.OK);
+    }
 }

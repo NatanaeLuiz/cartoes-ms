@@ -9,4 +9,5 @@ public interface PropostaService {
 
     public Proposta aprovaProposta(Long idProposta);
 
+    public Proposta buscarPropostaPorID(Long idProposta);
 }

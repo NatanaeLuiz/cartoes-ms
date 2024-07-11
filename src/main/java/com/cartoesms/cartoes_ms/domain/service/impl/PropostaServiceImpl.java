@@ -8,6 +8,8 @@ import com.cartoesms.cartoes_ms.domain.service.PropostaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class PropostaServiceImpl implements PropostaService {
 
@@ -31,6 +33,11 @@ public class PropostaServiceImpl implements PropostaService {
         return propostaRepository.save(proposta);
     }
 
+    @Override
+    public Proposta buscarPropostaPorID(Long idProposta) {
+        Optional<Proposta> proposta = propostaRepository.findById(idProposta);
+        return proposta.get();
+    }
 
 
 }
